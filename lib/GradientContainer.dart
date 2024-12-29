@@ -6,22 +6,20 @@ var startAlignment = Alignment.topLeft;
 var endAlignment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  const GradientContainer(this.colors,{super.key});
 
-  static const List<Color> colors = [
-    Color(0xFF222831),
-    Color(0xFF393E46),
-    Color(0xFF00ADB5),
-    Color(0xFFEEEEEE)
-  ];
+  final List<Color> colors;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: startAlignment, end: endAlignment, colors: colors)),
-      child: const Center(child: DiceRoller()),
+        gradient: LinearGradient(
+            begin: startAlignment, end: endAlignment, colors: colors),
+      ),
+      child: const Center(
+        child: DiceRoller(),
+      ),
     );
   }
 }
